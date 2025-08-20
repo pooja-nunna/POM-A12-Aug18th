@@ -59,27 +59,96 @@ Here only we are calling the attributes
 STEP 3
 '''
 
-from selenium import webdriver
+# from selenium import webdriver
+#
+# opts = webdriver.ChromeOptions()
+# opts.add_experimental_option("detach", True)
+#
+# driver = webdriver.Chrome(opts)
+# driver.implicitly_wait(10)
+#
+# driver.get('https://demowebshop.tricentis.com/')
+# time.sleep(2)
+#
+# class Login:
+#
+#     def click_on_login(self):
+#         driver.find_element('xpath', '//a[text()="Log in"]').click()
+#
+#     def enter_login_email(self, email_id):
+#         driver.find_element('id', 'Email').send_keys(email_id)
+#
+#     def enter_login_pwd(self, password):
+#         driver.find_element('id', 'Password').send_keys(password)
 
-opts = webdriver.ChromeOptions()
-opts.add_experimental_option("detach", True)
 
-driver = webdriver.Chrome(opts)
-driver.implicitly_wait(10)
+###########################################################################################################
 
-driver.get('https://demowebshop.tricentis.com/')
-time.sleep(2)
+'''
+STEP4   :   We removed the initialization of driver and launching of the web-application and we gave it in the test_login.py 
+'''
+
+# class Login:
+#
+#     def click_on_login(self):
+#         driver.find_element('xpath', '//a[text()="Log in"]').click()
+#
+#     def enter_login_email(self, email_id):
+#         driver.find_element('id', 'Email').send_keys(email_id)
+#
+#     def enter_login_pwd(self, password):
+#         driver.find_element('id', 'Password').send_keys(password)
+#
+# ## ERROR
+# ## Because there is no driver in this file
+
+###########################################################################################################
+
+'''
+STEP5'''
 
 class Login:
 
+    def __init__(self, driver):
+        self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+
     def click_on_login(self):
-        driver.find_element('xpath', '//a[text()="Log in"]').click()
+        self.driver.find_element('xpath', '//a[text()="Log in"]').click()
 
     def enter_login_email(self, email_id):
-        driver.find_element('id', 'Email').send_keys(email_id)
+        self.driver.find_element('id', 'Email').send_keys(email_id)
 
     def enter_login_pwd(self, password):
-        driver.find_element('id', 'Password').send_keys(password)
+        self.driver.find_element('id', 'Password').send_keys(password)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
