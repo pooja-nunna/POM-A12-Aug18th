@@ -107,20 +107,73 @@ STEP4   :   We removed the initialization of driver and launching of the web-app
 '''
 STEP5'''
 
+# class Login:
+#
+#     def __init__(self, driver):
+#         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+#
+#     def click_on_login(self):
+#         self.driver.find_element('xpath', '//a[text()="Log in"]').click()
+#
+#     def enter_login_email(self, email_id):
+#         self.driver.find_element('id', 'Email').send_keys(email_id)
+#
+#     def enter_login_pwd(self, password):
+#         self.driver.find_element('id', 'Password').send_keys(password)
+
+###########################################################################################################
+
+'''
+STEP6
+
+'''
+
+from object_repository.login_repo import LoginLocators
+
+login_loc = LoginLocators()
+
 class Login:
 
     def __init__(self, driver):
         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
 
     def click_on_login(self):
-        self.driver.find_element('xpath', '//a[text()="Log in"]').click()
+        # self.driver.find_element('xpath', '//a[text()="Log in"]').click()
+        self.driver.find_element(*login_loc.login_link).click()
 
     def enter_login_email(self, email_id):
-        self.driver.find_element('id', 'Email').send_keys(email_id)
+        # self.driver.find_element('id', 'Email').send_keys(email_id)
+        self.driver.find_element(*login_loc.login_email).send_keys(email_id)
 
     def enter_login_pwd(self, password):
-        self.driver.find_element('id', 'Password').send_keys(password)
+        # self.driver.find_element('id', 'Password').send_keys(password)
+        self.driver.find_element(*login_loc.login_pwd).send_keys(password)
 
+
+###########################################################################################################
+
+'''
+STEP6
+
+'''
+
+from object_repository.login_repo import LoginLocators
+
+login_loc = LoginLocators()
+
+class Login:
+
+    def __init__(self, driver):
+        self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+
+    def click_on_login(self):
+        self.driver.find_element(*login_loc.login_link).click()
+
+    def enter_login_email(self, email_id):
+        self.driver.find_element(*login_loc.login_email).send_keys(email_id)
+
+    def enter_login_pwd(self, password):
+        self.driver.find_element(*login_loc.login_pwd).send_keys(password)
 
 
 

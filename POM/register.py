@@ -153,7 +153,96 @@ STEP4   :   We removed the initialization of driver and launching of the web-app
 STEP5
 
 '''
+# class Register:
+#
+#     def __init__(self, driver):
+#         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+#
+#     def click_on_register(self):
+#         self.driver.find_element('xpath', '//a[text()="Register"]').click()
+#
+#     def click_on_gender_btn(self):
+#         self.driver.find_element('id', 'gender-male').click()
+#
+#     def enter_firstname(self, fname):
+#         self.driver.find_element('id', 'FirstName').send_keys(fname)
+#
+#     def enter_lastname(self, lname):
+#         self.driver.find_element('id', 'LastName').send_keys(lname)
+#
+#     def enter_reg_email(self, email_id):
+#         self.driver.find_element('id', 'Email').send_keys(email_id)
+#
+#     def enter_reg_pwd(self, password):
+#         self.driver.find_element('id', 'Password').send_keys(password)
+#
+#     def enter_confirm_pwd(self, confirm_pwd):
+#         self.driver.find_element('id', 'ConfirmPassword').send_keys(confirm_pwd)
+#
 
+#####################################################################################################
+
+'''
+STEP6
+
+'''
+
+# from object_repository.reg_repo import RegisterLocators
+#
+# reg_loc = RegisterLocators()
+# print(reg_loc.reg_link)     ## ('xpath', '//a[text()="Register"]')
+# print(reg_loc.gender_btn)   ## ('id', 'gender-male')
+# print(reg_loc.firstname)    ## ('id', 'FirstName')
+# print(reg_loc.lastname)     ## ('id', 'LastName')
+# print(reg_loc.reg_email)    ## ('id', 'Email')
+# print(reg_loc.reg_pwd)      ## ('id', 'Password')
+# print(reg_loc.confirm_pwd)  ## ('id', 'ConfirmPassword')
+#
+#
+# class Register:
+#
+#     def __init__(self, driver):
+#         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+#
+#     def click_on_register(self):
+#         # self.driver.find_element('xpath', '//a[text()="Register"]').click()
+#         self.driver.find_element(*reg_loc.reg_link).click()
+#
+#     def click_on_gender_btn(self):
+#         # self.driver.find_element('id', 'gender-male').click()
+#         self.driver.find_element(*reg_loc.gender_btn).click()
+#
+#     def enter_firstname(self, fname):
+#         # self.driver.find_element('id', 'FirstName').send_keys(fname)
+#         self.driver.find_element(*reg_loc.firstname).send_keys(fname)
+#
+#     def enter_lastname(self, lname):
+#         # self.driver.find_element('id', 'LastName').send_keys(lname)
+#         self.driver.find_element(*reg_loc.lastname).send_keys(lname)
+#
+#     def enter_reg_email(self, email_id):
+#         # self.driver.find_element('id', 'Email').send_keys(email_id)
+#         self.driver.find_element(*reg_loc.reg_email).send_keys(email_id)
+#
+#     def enter_reg_pwd(self, password):
+#         # self.driver.find_element('id', 'Password').send_keys(password)
+#         self.driver.find_element(*reg_loc.reg_pwd).send_keys(password)
+#
+#     def enter_confirm_pwd(self, confirm_pwd):
+#         # self.driver.find_element('id', 'ConfirmPassword').send_keys(confirm_pwd)
+#         self.driver.find_element(*reg_loc.confirm_pwd).send_keys(confirm_pwd)
+#
+
+#####################################################################################################
+
+'''
+STEP6
+
+'''
+
+from object_repository.reg_repo import RegisterLocators
+
+reg_loc = RegisterLocators()
 
 class Register:
 
@@ -161,33 +250,25 @@ class Register:
         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
 
     def click_on_register(self):
-        self.driver.find_element('xpath', '//a[text()="Register"]').click()
+        self.driver.find_element(*reg_loc.reg_link).click()
 
     def click_on_gender_btn(self):
-        self.driver.find_element('id', 'gender-male').click()
+        self.driver.find_element(*reg_loc.gender_btn).click()
 
     def enter_firstname(self, fname):
-        self.driver.find_element('id', 'FirstName').send_keys(fname)
+        self.driver.find_element(*reg_loc.firstname).send_keys(fname)
 
     def enter_lastname(self, lname):
-        self.driver.find_element('id', 'LastName').send_keys(lname)
+        self.driver.find_element(*reg_loc.lastname).send_keys(lname)
 
     def enter_reg_email(self, email_id):
-        self.driver.find_element('id', 'Email').send_keys(email_id)
+        self.driver.find_element(*reg_loc.reg_email).send_keys(email_id)
 
     def enter_reg_pwd(self, password):
-        self.driver.find_element('id', 'Password').send_keys(password)
+        self.driver.find_element(*reg_loc.reg_pwd).send_keys(password)
 
     def enter_confirm_pwd(self, confirm_pwd):
-        self.driver.find_element('id', 'ConfirmPassword').send_keys(confirm_pwd)
-
-
-
-
-
-
-
-
+        self.driver.find_element(*reg_loc.confirm_pwd).send_keys(confirm_pwd)
 
 
 

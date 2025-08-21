@@ -42,19 +42,54 @@
 
 ##########################################################################
 
-name = 'Sujitha'
+# name = 'Sujitha'
+#
+# class Sample:
+#
+#     def __init__(self, name):
+#         self.name = name        ## self.name --> name = Sujitha
+#
+#     def display(self):
+#         print(self.name)
+#
+#
+# s_obj = Sample(name)
+# s_obj.display()
 
-class Sample:
+###############################################################################################
 
-    def __init__(self, name):
-        self.name = name        ## self.name --> name = Sujitha
+# name = 'Ajay', 'Durga', 'Prasad'
+# print(name)
+# print(*name)
 
-    def display(self):
-        print(self.name)
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+
+locators = ('xpath', '//tag[@attr_name="attr_value"]')
+
+driver.find_element('xpath', '//tag[@attr_name="attr_value"]').click()
+driver.find_element(*locators).click()
 
 
-s_obj = Sample(name)
-s_obj.display()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
