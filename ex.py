@@ -62,17 +62,16 @@
 # print(name)
 # print(*name)
 
-from selenium import webdriver
+# from selenium import webdriver
+#
+# driver = webdriver.Chrome()
+#
+# locators = ('xpath', '//tag[@attr_name="attr_value"]')
+#
+# driver.find_element('xpath', '//tag[@attr_name="attr_value"]').click()
+# driver.find_element(*locators).click()
 
-driver = webdriver.Chrome()
-
-locators = ('xpath', '//tag[@attr_name="attr_value"]')
-
-driver.find_element('xpath', '//tag[@attr_name="attr_value"]').click()
-driver.find_element(*locators).click()
-
-
-
+###############################################################################################
 
 
 

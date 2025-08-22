@@ -1,0 +1,5 @@
+*   Create a new project(demowebshop)
+*   create a directory(external_files) --> create a excel file --> write down the test-data
+*   create a generic_utilities package --> excel_utility file --> read the excel file
+*   create Scripts package --> write down the test scripts for reg and login
+*   create object repository package, store the locators of reg and login

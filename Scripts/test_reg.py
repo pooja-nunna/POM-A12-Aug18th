@@ -180,6 +180,7 @@ from generic_utilities.excel_utility import excel_data
 
 data = excel_data('reg')
 
+
 def test_reg(browser_setup):
     reg_obj = Register(browser_setup)
     reg_obj.click_on_register()

@@ -128,26 +128,26 @@ STEP6
 
 '''
 
-from object_repository.login_repo import LoginLocators
-
-login_loc = LoginLocators()
-
-class Login:
-
-    def __init__(self, driver):
-        self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
-
-    def click_on_login(self):
-        # self.driver.find_element('xpath', '//a[text()="Log in"]').click()
-        self.driver.find_element(*login_loc.login_link).click()
-
-    def enter_login_email(self, email_id):
-        # self.driver.find_element('id', 'Email').send_keys(email_id)
-        self.driver.find_element(*login_loc.login_email).send_keys(email_id)
-
-    def enter_login_pwd(self, password):
-        # self.driver.find_element('id', 'Password').send_keys(password)
-        self.driver.find_element(*login_loc.login_pwd).send_keys(password)
+# from object_repository.login_repo import LoginLocators
+#
+# login_loc = LoginLocators()
+#
+# class Login:
+#
+#     def __init__(self, driver):
+#         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+#
+#     def click_on_login(self):
+#         # self.driver.find_element('xpath', '//a[text()="Log in"]').click()
+#         self.driver.find_element(*login_loc.login_link).click()
+#
+#     def enter_login_email(self, email_id):
+#         # self.driver.find_element('id', 'Email').send_keys(email_id)
+#         self.driver.find_element(*login_loc.login_email).send_keys(email_id)
+#
+#     def enter_login_pwd(self, password):
+#         # self.driver.find_element('id', 'Password').send_keys(password)
+#         self.driver.find_element(*login_loc.login_pwd).send_keys(password)
 
 
 ###########################################################################################################
@@ -156,27 +156,101 @@ class Login:
 STEP6
 
 '''
+#
+# from object_repository.login_repo import LoginLocators
+#
+# login_loc = LoginLocators()
+#
+# class Login:
+#
+#     def __init__(self, driver):
+#         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+#
+#     def click_on_login(self):
+#         self.driver.find_element(*login_loc.login_link).click()
+#
+#     def enter_login_email(self, email_id):
+#         self.driver.find_element(*login_loc.login_email).send_keys(email_id)
+#
+#     def enter_login_pwd(self, password):
+#         self.driver.find_element(*login_loc.login_pwd).send_keys(password)
+
+###########################################################################################################
+
+'''
+STEP7
+
+'''
+
+# from object_repository.login_repo import LoginLocators
+#
+# login_loc = LoginLocators()
+#
+# class SeleniumWrapper:
+#
+#     def __init__(self, driver):
+#         self.driver = driver
+#
+#     def click_on_element(self, element):
+#         self.driver.find_element(*element).click()
+#
+#     def enter_data(self, element, data):
+#         self.driver.find_element(*element).send_keys(data)
+#
+# class Login:
+#
+#     def __init__(self, driver):
+#         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+#         self.sel_ = SeleniumWrapper(driver)
+#
+#     def click_on_login(self):
+#         # self.driver.find_element(*login_loc.login_link).click()
+#         self.sel_.click_on_element(login_loc.login_link)
+#
+#     def enter_login_email(self, email_id):
+#         # self.driver.find_element(*login_loc.login_email).send_keys(email_id)
+#         self.sel_.enter_data(login_loc.login_email, email_id)
+#
+#     def enter_login_pwd(self, password):
+#         # self.driver.find_element(*login_loc.login_pwd).send_keys(password)
+#         self.sel_.enter_data(login_loc.login_pwd, password)
+
+###########################################################################################################
+
+'''
+STEP7
+
+'''
 
 from object_repository.login_repo import LoginLocators
 
 login_loc = LoginLocators()
 
+class SeleniumWrapper:
+
+    def __init__(self, driver):
+        self.driver = driver
+
+    def click_on_element(self, element):
+        self.driver.find_element(*element).click()
+
+    def enter_data(self, element, data):
+        self.driver.find_element(*element).send_keys(data)
+
 class Login:
 
     def __init__(self, driver):
         self.driver = driver        ## self.driver --> driver = webdriver.Chrome()
+        self.sel_ = SeleniumWrapper(driver)
 
     def click_on_login(self):
-        self.driver.find_element(*login_loc.login_link).click()
+        self.sel_.click_on_element(login_loc.login_link)
 
     def enter_login_email(self, email_id):
-        self.driver.find_element(*login_loc.login_email).send_keys(email_id)
+        self.sel_.enter_data(login_loc.login_email, email_id)
 
     def enter_login_pwd(self, password):
-        self.driver.find_element(*login_loc.login_pwd).send_keys(password)
-
-
-
+        self.sel_.enter_data(login_loc.login_pwd, password)
 
 
 

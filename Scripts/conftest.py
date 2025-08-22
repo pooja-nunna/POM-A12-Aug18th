@@ -12,3 +12,4 @@ def browser_setup():
     driver.get('https://demowebshop.tricentis.com/')
     time.sleep(2)
     yield driver
+    driver.close()
