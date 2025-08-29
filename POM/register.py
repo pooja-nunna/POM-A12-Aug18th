@@ -1,7 +1,7 @@
 import time
 
-# ## STEP1
-#
+## STEP1
+
 # from selenium import webdriver
 #
 # opts = webdriver.ChromeOptions()
@@ -335,19 +335,9 @@ STEP7
 '''
 
 from object_repository.reg_repo import RegisterLocators
+from generic_utilities.webdriver_utility import SeleniumWrapper
 
 reg_loc = RegisterLocators()
-
-class SeleniumWrapper:
-
-    def __init__(self, driver):
-        self.driver = driver
-
-    def click_on_element(self, element):
-        self.driver.find_element(*element).click()
-
-    def enter_data(self, element, data):
-        self.driver.find_element(*element).send_keys(data)
 
 
 class Register:
